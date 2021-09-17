@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TalestoreApplication<talestore>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ronan.talestore.TalestoreApplication",
+            "projectName": "talestore",
+            "args": ""
+        }
+    ]
+}
