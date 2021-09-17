@@ -42,6 +42,13 @@ public class Conto implements Serializable{
         this.categoria = categoria;
     }
 
+    public Conto(String titulo, String nomeAutor, String texto, Categoria categoria) {
+        this.titulo = titulo;
+        this.nomeAutor = nomeAutor;
+        this.texto = texto;
+        this.categoria = categoria;
+    }
+
     public Integer getId() {
         return id;
     }
