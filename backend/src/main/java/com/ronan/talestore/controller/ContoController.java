@@ -4,12 +4,15 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import com.ronan.talestore.DTO.ContoDTO;
 import com.ronan.talestore.domain.Conto;
 import com.ronan.talestore.service.ContoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/contos")
 public class ContoController {
@@ -43,20 +47,20 @@ public class ContoController {
     }
 
     @PostMapping
-    public ResponseEntity<Conto> create(@RequestParam(value = "categoria", defaultValue = "0") Integer id_categoria, @RequestBody Conto obj) {
+    public ResponseEntity<Conto> create(@RequestParam(value = "categoria", defaultValue = "0") Integer id_categoria, @Valid @RequestBody Conto obj) {
         obj = service.create(id_categoria, obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/contos/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Conto> update(@PathVariable Integer id, @RequestBody Conto obj) {
+    public ResponseEntity<Conto> update(@PathVariable Integer id, @Valid @RequestBody Conto obj) {
         Conto newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }
 
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<Conto> updatePatch(@PathVariable Integer id, @RequestBody Conto obj) {
+    public ResponseEntity<Conto> updatePatch(@PathVariable Integer id, @Valid @RequestBody Conto obj) {
         Conto newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }

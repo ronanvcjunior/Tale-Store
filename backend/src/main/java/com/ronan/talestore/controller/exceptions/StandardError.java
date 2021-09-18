@@ -3,7 +3,7 @@ package com.ronan.talestore.controller.exceptions;
 import java.time.LocalDateTime;
 
 public class StandardError {
-    private LocalDateTime localDate;
+    private LocalDateTime timeStamp;
     private Integer status;
     private String error;
 
@@ -11,18 +11,18 @@ public class StandardError {
     public StandardError() {
     }
 
-    public StandardError(LocalDateTime localDate, Integer status, String error) {
-        this.localDate = localDate;
+    public StandardError(LocalDateTime timeStamp, Integer status, String error) {
+        this.timeStamp = timeStamp;
         this.status = status;
         this.error = error;
     }
 
-    public LocalDateTime getLocalDate() {
-        return this.localDate;
+    public LocalDateTime getTimeStamp() {
+        return this.timeStamp;
     }
 
-    public void setLocalDate(LocalDateTime localDate) {
-        this.localDate = localDate;
+    public void setTimeStamp(LocalDateTime timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public Integer getStatus() {
@@ -41,8 +41,8 @@ public class StandardError {
         this.error = error;
     }
 
-    public StandardError localDate(LocalDateTime localDate) {
-        setLocalDate(localDate);
+    public StandardError timeStamp(LocalDateTime timeStamp) {
+        setTimeStamp(timeStamp);
         return this;
     }
 

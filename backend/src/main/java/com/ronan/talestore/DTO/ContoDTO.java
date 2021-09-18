@@ -2,12 +2,19 @@ package com.ronan.talestore.DTO;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 import com.ronan.talestore.domain.Conto;
+
+import org.hibernate.validator.constraints.Length;
 
 public class ContoDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
+    
+    @NotBlank(message = "Campo TITULO é requerido")
+    @Length(min = 3, max = 50, message = "O campo TITULO deve ter entre 3 e 50 caracteres")
     private String titulo;
 
     public ContoDTO() {
