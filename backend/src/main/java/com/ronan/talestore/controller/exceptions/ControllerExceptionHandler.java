@@ -1,6 +1,5 @@
 package com.ronan.talestore.controller.exceptions;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.servlet.ServletRequest;

@@ -1,6 +1,5 @@
 package com.ronan.talestore.controller.exceptions;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class StandardError {
