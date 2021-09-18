@@ -14,15 +14,20 @@ import org.springframework.stereotype.Service;
 public class CategoriaService {
 
     @Autowired
-    private CategoriaRepository categoriaRepository;
+    private CategoriaRepository repository;
     
+    public List<Categoria> findAll() {
+        return repository.findAll();
+    }
+
     public Categoria findById(Integer id) {
-        Optional<Categoria> obj = categoriaRepository.findById(id);
+        Optional<Categoria> obj = repository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException(
                 "Objeto não encontrado! " + id + ", Tipo: " + Categoria.class.getName()));
     }
 
-    public List<Categoria> findAll() {
-        return categoriaRepository.findAll();
+    public Categoria create(Categoria obj) {
+        obj.setId(null);
+        return repository.save(obj);
     }
 }
