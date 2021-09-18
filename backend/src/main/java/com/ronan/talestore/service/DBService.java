@@ -22,6 +22,7 @@ public class DBService {
     public void instanciaBaseDeDados() {
         Categoria cat1 = new Categoria("Suspense", "Contos de Suspense");
         Categoria cat2 = new Categoria("Terror", "Contos de Terror");
+        Categoria cat3 = new Categoria("Fábulas", "Contos de Fábulas");
 
         Conto conto1 = new Conto("Perseguição", "Paulo André T.M.Gomes", "Lorem Ipsum", cat1);
         Conto conto2 = new Conto("Conto de mistério", "Stanislaw Ponte Preta", "Lorem Ipsum", cat1);
@@ -33,7 +34,7 @@ public class DBService {
         cat1.getContos().addAll(Arrays.asList(conto1, conto2, conto3));
         cat2.getContos().addAll(Arrays.asList(conto4, conto5, conto6));
 
-        categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+        categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
         contoRepository.saveAll(Arrays.asList(conto1, conto2, conto3, conto4, conto5, conto6));
     }
 }
