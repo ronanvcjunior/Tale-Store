@@ -3,6 +3,7 @@ package com.ronan.talestore.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.ronan.talestore.DTO.CategoriaDTO;
 import com.ronan.talestore.domain.Categoria;
 import com.ronan.talestore.repository.CategoriaRepository;
 import com.ronan.talestore.service.exceptions.ObjectNotFoundException;
@@ -28,6 +29,13 @@ public class CategoriaService {
 
     public Categoria create(Categoria obj) {
         obj.setId(null);
+        return repository.save(obj);
+    }
+
+    public Categoria update(Integer id, CategoriaDTO objDto) {
+        Categoria obj = findById(id);
+        obj.setNome(objDto.getNome());
+        obj.setDescricao(objDto.getDescricao());
         return repository.save(obj);
     }
 }
