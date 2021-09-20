@@ -18,4 +18,17 @@ export class ContoService {
     const url = `${this.baseUrl}/contos?categoria=${id_categoria}`
     return this.http.get<Conto[]>(url)
   }
+
+  create(id_categoria: String, conto: Conto): Observable<Conto> {
+    const url = `${this.baseUrl}/contos?categoria=${id_categoria}`
+    return this.http.post<Conto>(url, conto)
+  }
+
+  mensagem(str: String): void {
+    this._snack.open(`${str}`, 'OK', {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      duration: 3000
+    })
+  }
 }

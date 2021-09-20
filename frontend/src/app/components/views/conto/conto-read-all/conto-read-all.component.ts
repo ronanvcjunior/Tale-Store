@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Categoria } from '../../categoria/categoria.model';
+import { CategoriaService } from '../../categoria/categoria.service';
 import { Conto } from '../conto.model';
 import { ContoService } from '../conto.service';
 
@@ -16,11 +18,25 @@ export class ContoReadAllComponent implements OnInit {
 
   id_categoria: String = ''
 
-  constructor(private service: ContoService, private route: ActivatedRoute) { }
+  categoria: Categoria = {
+    id: '',
+    nome: '',
+    descricao: ''
+  }
+
+  constructor(private service: ContoService, private route: ActivatedRoute, private router: Router, private serviceCategoria: CategoriaService) { }
 
   ngOnInit(): void {
     this.id_categoria = this.route.snapshot.paramMap.get('id_categoria')!
     this.findAll()
+    this.findByid()
+  }
+
+  findByid(): void {
+    this.serviceCategoria.findById(this.id_categoria || '').subscribe((resposta) => {
+      this.categoria = resposta
+      console.log(this.categoria)
+    })
   }
 
   findAll(): void {
@@ -29,6 +45,10 @@ export class ContoReadAllComponent implements OnInit {
       console.log(resposta);
       
     })
+  }
+
+  navegarParaCriarConto(): void {
+    this.router.navigate([`categorias/${this.id_categoria}/contos/create`])
   }
 
 }

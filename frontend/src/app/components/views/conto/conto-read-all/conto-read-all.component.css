@@ -21,6 +21,10 @@ button {
     width: 100%;
 }
 
+i {
+    cursor: pointer;
+}
+
 .contos {
     margin-left: 0.45rem;
 }

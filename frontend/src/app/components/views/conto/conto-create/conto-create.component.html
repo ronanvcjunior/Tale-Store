@@ -1,0 +1,29 @@
+<form class="example-form">
+    <h1>Publicar um novo Conto de {{ categoria.nome }}</h1>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input matInput [(ngModel)]="conto.titulo" [formControl]="titulo" required type="text" name="titulo"
+            placeholder="Ex. À Deriva" maxlength="50">
+        <mat-error *ngIf="titulo.invalid">{{ getMessage('titulo') }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome do(a) Autor(a)</mat-label>
+        <input matInput [(ngModel)]="conto.nomeAutor" [formControl]="nomeAutor" required type="text" name="nomeAutor"
+            placeholder="Ex. Horacio Quiroga" maxlength="50">
+        <mat-error *ngIf="nomeAutor.invalid">{{ getMessage('nomeAutor') }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width texto" appearance="fill">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [(ngModel)]="conto.texto" [formControl]="texto" required type="text" name="texto"
+            placeholder="Ex. O homem pisou algo esbranquiçado e, em seguida..." maxlength="2000000"></textarea>
+        <mat-error *ngIf="texto.invalid">{{ getMessage('texto') }}</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button [disabled]="getMessage('button')" (click)="create()" class="mat-elevation-z4" mat-stroked-button color="accent">PUBLICAR</button>
+        <button (click)="cancel()" class="mat-elevation-z4" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>

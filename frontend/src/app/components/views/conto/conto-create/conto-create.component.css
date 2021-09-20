@@ -1,0 +1,38 @@
+.example-form {
+    width: 90%;
+    margin: 1.4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 150px;
+    width: 90%;
+}
+
+.mat-form-field {
+    width: 500px !important;
+    margin-bottom: .5rem;
+}
+
+.texto {
+    width: 100% !important;
+}
+
+textarea {
+    min-height: 245px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: rgb(201, 201, 201);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

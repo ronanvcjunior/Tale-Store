@@ -27,7 +27,7 @@
                 <th class="mat-header-contos" mat-header-cell *matHeaderCellDef> Contos </th>
                 <td mat-cell *matCellDef="let row">
                     <div class="contos">
-                        <a class="conto" matTooltip="Mostrar Lista de Contos da Categoria" routerLink="{{ row.id }}/contos">
+                        <a class="conto" matTooltip="Mostrar Lista de Contos de {{ row.nome }}" routerLink="{{ row.id }}/contos">
                             <i class="material-icons">article</i>
                         </a>
                     </div>
