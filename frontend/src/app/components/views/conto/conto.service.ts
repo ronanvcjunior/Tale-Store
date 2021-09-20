@@ -14,6 +14,11 @@ export class ContoService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
+  findById(id: String): Observable<Conto> {
+    const url = `${this.baseUrl}/contos/${id}`
+    return this.http.get<Conto>(url)
+  }
+
   findAllByCategoria(id_categoria: String): Observable<Conto[]> {
     const url = `${this.baseUrl}/contos?categoria=${id_categoria}`
     return this.http.get<Conto[]>(url)
@@ -22,6 +27,11 @@ export class ContoService {
   create(id_categoria: String, conto: Conto): Observable<Conto> {
     const url = `${this.baseUrl}/contos?categoria=${id_categoria}`
     return this.http.post<Conto>(url, conto)
+  }
+
+  update(conto: Conto): Observable<Conto> {
+    const url = `${this.baseUrl}/contos/${conto.id}`
+    return this.http.patch<Conto>(url, conto)
   }
 
   mensagem(str: String): void {

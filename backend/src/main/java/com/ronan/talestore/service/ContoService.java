@@ -42,7 +42,7 @@ public class ContoService {
     public Conto update(Integer id, Conto obj) {
         Conto newObj = findById(id);
         updateDate(newObj, obj);
-        return repository.save(obj);
+        return repository.save(newObj);
     }
 
     private void updateDate(Conto newObj, Conto obj) {
@@ -54,9 +54,6 @@ public class ContoService {
         }
         if (obj.getTexto() != null) {
             newObj.setTexto(obj.getTexto());
-        }
-        if (obj.getCategoria() != null) {
-            newObj.setCategoria(obj.getCategoria());
         }
     }
 

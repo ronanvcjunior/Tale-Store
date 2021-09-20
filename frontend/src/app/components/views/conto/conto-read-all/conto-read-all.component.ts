@@ -29,10 +29,10 @@ export class ContoReadAllComponent implements OnInit {
   ngOnInit(): void {
     this.id_categoria = this.route.snapshot.paramMap.get('id_categoria')!
     this.findAll()
-    this.findByid()
+    this.findByidCategoria()
   }
 
-  findByid(): void {
+  findByidCategoria(): void {
     this.serviceCategoria.findById(this.id_categoria || '').subscribe((resposta) => {
       this.categoria = resposta
       console.log(this.categoria)

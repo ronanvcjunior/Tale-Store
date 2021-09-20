@@ -18,6 +18,8 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 
 import { ContoReadAllComponent } from './components/views/conto/conto-read-all/conto-read-all.component';
+import { ContoCreateComponent } from './components/views/conto/conto-create/conto-create.component';
+import { ContoUpdateComponent } from './components/views/conto/conto-update/conto-update.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,7 +32,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ContoCreateComponent } from './components/views/conto/conto-create/conto-create.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ContoCreateComponent } from './components/views/conto/conto-create/cont
     CategoriaDeleteComponent,
     CategoriaUpdateComponent,
     ContoReadAllComponent,
-    ContoCreateComponent
+    ContoCreateComponent,
+    ContoUpdateComponent
   ],
   imports: [
     BrowserModule,

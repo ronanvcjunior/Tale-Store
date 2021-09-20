@@ -7,11 +7,11 @@ import { Conto } from '../conto.model';
 import { ContoService } from '../conto.service';
 
 @Component({
-  selector: 'app-conto-create',
-  templateUrl: './conto-create.component.html',
-  styleUrls: ['./conto-create.component.css']
+  selector: 'app-conto-update',
+  templateUrl: './conto-update.component.html',
+  styleUrls: ['./conto-update.component.css']
 })
-export class ContoCreateComponent implements OnInit {
+export class ContoUpdateComponent implements OnInit {
 
   conto: Conto = {
     titulo: '',
@@ -38,6 +38,14 @@ export class ContoCreateComponent implements OnInit {
   ngOnInit(): void {
     this.id_categoria = this.route.snapshot.paramMap.get('id_categoria')!
     this.findByidCategoria()
+    this.conto.id = this.route.snapshot.paramMap.get('id')!
+    this.findById()
+  }
+
+  findById():void {
+    this.service.findById(this.conto.id!).subscribe((resposta) => {
+      this.conto = resposta
+    })
   }
 
   findByidCategoria(): void {
@@ -68,18 +76,20 @@ export class ContoCreateComponent implements OnInit {
     return false
   }
 
-  create(): void {
-    this.service.create(this.id_categoria, this.conto).subscribe((resposta) => {
+  update(): void {
+    this.service.update(this.conto).subscribe((resposta) => {
+      this.router.navigate([`categorias/${this.id_categoria}/contos`])
+      this.service.mensagem('Conto editado com sucesso!')
       console.log(resposta);
       
-      this.router.navigate([`categorias/${this.id_categoria}/contos`])
-      this.service.mensagem('O conto foi publicado com sucesso!')
     }, err => {
-      this.service.mensagem('Erro ao publicar o conto! Tente mais tarde!')
+      this.router.navigate([`categorias/${this.id_categoria}/contos`])
+      this.service.mensagem('Não foi possível editar o conto! Tente mais tarde!')
     })
   }
 
   cancel(): void {
     this.router.navigate([`categorias/${this.id_categoria}/contos`])
   }
+
 }
