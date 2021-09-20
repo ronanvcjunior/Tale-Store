@@ -4,6 +4,7 @@ import { CategoriaCreateComponent } from './components/views/categoria/categoria
 import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
+import { ContoReadAllComponent } from './components/views/conto/conto-read-all/conto-read-all.component';
 import { HomeComponent } from './components/views/home/home.component';
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'categorias/update/:id',
     component: CategoriaUpdateComponent
+  },
+  {
+    path: 'categorias/:id_categoria/contos',
+    component: ContoReadAllComponent
   }
 ];
 

@@ -1,0 +1,61 @@
+.content {
+    width: 90%;
+    margin: 1.4rem auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title h1 {
+    font-size: 2rem;
+    color: rgb(201, 201, 201);
+}
+
+button {
+    margin-bottom: 1rem;
+}
+
+.table {
+    width: 100%;
+}
+
+.contos {
+    margin-left: 0.45rem;
+}
+
+.conto {
+    color: #6a6af0;
+}
+
+.mat-header-acoes {
+    width: 6rem;
+    text-align: center;
+}
+
+.acoes {
+    width: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit {
+    color: #9c27b0;
+}
+
+.delete {
+    color: #f44336;
+}
+
+@media (max-width: 450px) {
+    .content {
+        width: 70%;
+    }
+}
+
+@media (max-width: 770px) {
+    .content {
+        width: 90%;
+    }
+}
