@@ -1,0 +1,23 @@
+form {
+    width: 90%;
+    margin: 1.4rem auto 0;
+}
+
+.home {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.titulo {
+    position: relative;
+}
+
+button {
+    position: absolute;
+    top: calc(50% - 17.8px);
+    left: 6.2px;
+}
+
+.texto {
+    text-align: justify;
+}

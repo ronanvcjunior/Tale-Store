@@ -32,6 +32,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ContoDeleteComponent } from './components/views/conto/conto-delete/conto-delete.component';
+import { ContoReadComponent } from './components/views/conto/conto-read/conto-read.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CategoriaUpdateComponent,
     ContoReadAllComponent,
     ContoCreateComponent,
-    ContoUpdateComponent
+    ContoUpdateComponent,
+    ContoDeleteComponent,
+    ContoReadComponent
   ],
   imports: [
     BrowserModule,

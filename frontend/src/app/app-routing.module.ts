@@ -5,7 +5,9 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { ContoCreateComponent } from './components/views/conto/conto-create/conto-create.component';
+import { ContoDeleteComponent } from './components/views/conto/conto-delete/conto-delete.component';
 import { ContoReadAllComponent } from './components/views/conto/conto-read-all/conto-read-all.component';
+import { ContoReadComponent } from './components/views/conto/conto-read/conto-read.component';
 import { ContoUpdateComponent } from './components/views/conto/conto-update/conto-update.component';
 import { HomeComponent } from './components/views/home/home.component';
 
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path: 'categorias/:id_categoria/contos/:id/update',
     component: ContoUpdateComponent
+  },
+  {
+    path: 'categorias/:id_categoria/contos/:id/delete',
+    component: ContoDeleteComponent
+  },
+  {
+    path: 'categorias/:id_categoria/contos/:id/read',
+    component: ContoReadComponent
   }
 ];
 

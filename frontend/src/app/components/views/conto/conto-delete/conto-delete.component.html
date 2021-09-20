@@ -1,0 +1,23 @@
+<form class="example-form">
+    <h1>Deletar Conto de {{ categoria.nome }}</h1>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input matInput [(ngModel)]="conto.titulo" disabled required type="text" name="titulo">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome do(a) Autor(a)</mat-label>
+        <input matInput [(ngModel)]="conto.nomeAutor" disabled required type="text" name="nomeAutor">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width texto" appearance="fill">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [(ngModel)]="conto.texto" disabled required type="text" name="texto"></textarea>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="delete()" class="mat-elevation-z4" mat-stroked-button color="accent">DELETAR</button>
+        <button (click)="cancel()" class="mat-elevation-z4" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>
